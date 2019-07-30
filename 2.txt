@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        function leftscroll(){//左转
+            var title=document.title;
+            var first=title.charAt(0);
+            var second=title.substring(1,title.length);
+            document.title=second+first;
+	    }
+        function ok(){
+        time=setInterval("leftscroll()",500);
+        }
+        function cancel(){
+            clearInterval(time);
+
+        }
+        function rightscroll(){//右转
+            var title=document.title;
+            var first=title.charAt(7);
+            var second=title.substring(0,title.length-1);
+            document.title=first+second;
+        }
+        function yes(){
+        time=setInterval("rightscroll()",500);
+        }
+    </script>
+</head>
+<body>
+    <div >
+    <input type="button" value="左转" onclick="ok()"/>
+    <input type="button" value="右转" onclick="yes()"/>
+    <input type="button" value="停止"  onclick="cancel(time)"/>
+    </div>
+</body>
+</html>
